@@ -36,6 +36,9 @@ class Credentials:
     
     @classmethod
     def credential_exist(cls, name):
+        '''
+        This method checks whether the credential with the name entered is already existing in the credentials list. It takes the name of the credential as an argument and returns True if credential exists and False if it does not.
+        '''
         for credential in cls.credentials:
             if credential.credential_name == name:
                 return True 
