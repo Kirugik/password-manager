@@ -1,3 +1,4 @@
+from random import choice
 import string 
 '''
 Credentials class that creates user credentials 
@@ -23,8 +24,9 @@ class Credentials:
 
     @classmethod
     def generate_password(cls):
+        pass 
         # size = 10
-        # generate rando alphanumeric
+        # generate random alphanumeric
         # alphanum = string.ascii_uppercase + string.digits + string.ascii_lowercase 
         # create password
         # password = ''.join(choice(alphanum) for num in range(size))
