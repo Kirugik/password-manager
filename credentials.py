@@ -24,13 +24,12 @@ class Credentials:
 
     @classmethod
     def generate_password(cls):
-        pass 
-        # size = 10
+        size = 10
         # generate random alphanumeric
-        # alphanum = string.ascii_uppercase + string.digits + string.ascii_lowercase 
+        alphanum = string.ascii_uppercase + string.digits + string.ascii_lowercase 
         # create password
-        # password = ''.join(choice(alphanum) for num in range(size))
-        # return password
+        password = ''.join(choice(alphanum) for num in range(size))
+        return password
 
     @classmethod
     def display_credentials(cls, password):

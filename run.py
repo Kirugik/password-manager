@@ -34,9 +34,9 @@ def show_credentials_list(password):
     return Credentials.display_credentials(password)
 
 
-# def create_generated_password(name):
-#     password = Credentials.generate_password()
-#     return password
+def create_generated_password(name):
+    password = Credentials.generate_password()
+    return password
 
 
 
@@ -81,9 +81,7 @@ def main():
 
                 for user in display_users():
                     print(f"{user.full_name}")
-                    print('''
-                    ***************************************************
-                    ''')
+                    print("**"*30) 
             else:
                 print("\n")  
                 print("Nobody is currently using Password Manager")
@@ -110,17 +108,18 @@ def main():
                 while True:
                     print('''
                     Select: \n
-                    cnc - To create a new credential \n 
-                    dec - To display a list of existing credentials \n 
-                    cgp - To create credential with generated password \n 
-                    ex - To exit credentials
+                    cnc - To create a new credential. \n 
+                    dec - To display a list of existing credentials. \n 
+                    cgp - To create credential with application-generated password. \n
+                    del - To delete credentials account. \n  
+                    ex - To exit your credentials account.
                     ''')
 
                     code = input("Enter code: ").lower()
 
                     if code == "cnc":
                         print("\n")
-                        print("Create a New Credential:")
+                        print("Create a New Credential")
                         print("**"*30)
                         # print("Credential Name: ")
                         credential_name = input("Credential Name: ")
@@ -149,18 +148,33 @@ def main():
                         else:
                             print(f"{full_name}, you do not have any credentials at the moment")
                     
+                    elif code == "cgp":
+                        print("\n") 
+                        print("Create a New Credential")
+                        print("**"*30)
+
+                        # print("Credential Name: ")
+                        credential_name = input("Credential Name: ")
+
+                        # save new credential with app-generated password 
+                        save_new_credential(Credentials(password, credential_name, (create_generated_password(credential_name))))
+                        print("\n")
+                        print(f"Credetials for {credential_name} successfully created")
+                        print("\n") 
+
+
                     elif code == "ex":
-                        print(f"You are exiting your account, {full_name}")
+                        print(f"{full_name}, you have exited from your account")
                         break
                     else:
                         print(f" Invalid code {code}, Try Again")
 
         elif code == "ex":
-            print(f"Goodbye")
+            print("Goodbye")
             break
         
         else:
-            print("You entered a wrong code, Try Again")
+            print("You entered a wrong code, Try Again.")
 
 if __name__ == '__main__':
     main()
