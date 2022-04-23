@@ -19,3 +19,7 @@ def account_login(name, password):
 
 def display_users():
     return User.display_user
+
+def generate_new_credential(password, account_name, account_password):
+    new_credential = Credentials(password, account_name, account_password)
+    return new_credential
