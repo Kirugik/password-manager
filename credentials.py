@@ -22,6 +22,9 @@ class Credentials:
         '''
         Credentials.credentials.append(self)
 
+    def delete_credential(self):
+        Credentials.credentials.remove(self)
+
     @classmethod
     def generate_password(cls):
         size = 10

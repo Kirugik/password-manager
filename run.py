@@ -33,6 +33,10 @@ def check_existing_credentials(name):
 def show_credentials_list(password):
     return Credentials.display_credentials(password)
 
+# deleting a credential
+# def delete_credential(name):
+#     name.delete_credential()
+
 
 def create_generated_password(name):
     password = Credentials.generate_password()
@@ -117,6 +121,7 @@ def main():
 
                     code = input("Enter code: ").lower()
 
+                    # create a new credential
                     if code == "cnc":
                         print("\n")
                         print("Create a New Credential")
@@ -135,6 +140,7 @@ def main():
                         print(f"Credetials for {credential_name} successfully created")
                         print("\n") 
                     
+                    # display a list of all credentials
                     elif code == "dec":
                         if show_credentials_list(password):
                             print("\n") 
@@ -148,6 +154,7 @@ def main():
                         else:
                             print(f"{full_name}, you do not have any credentials at the moment")
                     
+                    # Allow app to generate password for the account
                     elif code == "cgp":
                         print("\n") 
                         print("Create a New Credential")
@@ -161,6 +168,15 @@ def main():
                         print("\n")
                         print(f"Credetials for {credential_name} successfully created")
                         print("\n") 
+
+                    # deleting a credential
+                    # elif code == "del":
+                    #     print("\n") 
+                    #     print("Enter the account name of the credentials you want to delete")
+                    #     account_todelete = input("Which account do you want to delete?: ")
+                    #     if check_existing_credentials(account_todelete):
+                    #         account_todelete = check_existing_credentials(account_todelete)
+                    #         delete_credential(account_todelete)
 
 
                     elif code == "ex":
