@@ -12,9 +12,9 @@ class User:
         User.users.append(self)
 
     @classmethod
-    def display_users(cls):
+    def display_user(cls):
         return cls.users
-        
+
     @classmethod
     def login(cls, name, pword):
         for user in cls.users:
@@ -22,4 +22,17 @@ class User:
                 return Credentials.credentials
             return False 
 
-
+    
+    @classmethod
+    def find_credential(cls, name):
+        for credential in Credentials.credentials:
+            if credential.credential_name == name:
+                return True
+            return False 
+    
+    @classmethod
+    def check_user_exist(clas, name):
+        for user in cls.users:
+            if user.full_name == name:
+                return True
+            return False 
