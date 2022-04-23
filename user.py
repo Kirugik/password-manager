@@ -16,9 +16,9 @@ class User:
         return cls.users
 
     @classmethod
-    def login(cls, name, pword):
+    def login(cls, name, password):
         for user in cls.users:
-            if user.full_name == name and user.password == pword:
+            if user.full_name == name and user.password == password:
                 return Credentials.credentials
             return False 
 
@@ -31,7 +31,7 @@ class User:
             return False 
     
     @classmethod
-    def check_user_exist(clas, name):
+    def check_user_exist(cls, name):
         for user in cls.users:
             if user.full_name == name:
                 return True
