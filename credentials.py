@@ -22,6 +22,15 @@ class Credentials:
         Credentials.credentials.append(self)
 
     @classmethod
+    def generate_password(cls):
+        # size = 10
+        # generate rando alphanumeric
+        # alphanum = string.ascii_uppercase + string.digits + string.ascii_lowercase 
+        # create password
+        # password = ''.join(choice(alphanum) for num in range(size))
+        # return password
+
+    @classmethod
     def display_credentials(cls, password):
         '''
         The display_credentials() method returns the list of credentials for the user. It takes user password as a parameter.
