@@ -32,3 +32,11 @@ class Credentials:
             if credential.user_password == password:
                 user_credential_list.append(credential)
         return user_credential_list
+
+    
+    @classmethod
+    def credential_exist(cls, name):
+        for credential in cls.credentials:
+            if credential.credential_name == name:
+                return True 
+            return False 
