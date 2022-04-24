@@ -49,7 +49,7 @@ class TestUser(unittest.TestCase):
         Test case to test if the User module is importing from Credential module
         '''
 
-        # Save the new user
+        # Save new user
         self.new_user.save_user()
 
         test_user = User("Robert Kirui", "Rob@012345!")
@@ -66,7 +66,7 @@ class TestUser(unittest.TestCase):
         Test case to test if users can login to their account 
         '''
 
-        # Save the new user
+        # Save new user
         self.new_user.save_user()
 
         test_user = User("Robert Kirui", "Rob@012345!")
@@ -90,14 +90,14 @@ class TestUser(unittest.TestCase):
         Test to check if we can return a boolean if we can't find the user
         '''
         
-        # Save the new user
+        # Save new user
         self.new_user.save_user()
 
         test_user = User("Robert Kirui", "Rob@012345!")
 
         test_user.save_user()
         
-        # use contact exist method
+        # check if the user exists
         user_exists = User.check_user_exist("Robert Kirui")
         
         self.assertTrue(user_exists)
@@ -118,7 +118,7 @@ class TestCredentials(unittest.TestCase):
         Set up method to run before each test cases. 
         '''
 
-        # Create credential object
+        # Creating new_credential object
         self.new_credential = Credentials("RK","Slack","098765") 
     
     def tearDown(self):
@@ -140,7 +140,7 @@ class TestCredentials(unittest.TestCase):
         '''
         Test case to test if the user object is saved into the user list
         '''
-        # Saving new credential
+        # Save new credential
         self.new_credential.save_credential()
 
         self.assertEqual( len(Credentials.credentials), 1)
@@ -159,7 +159,7 @@ class TestCredentials(unittest.TestCase):
         Test case to test if a user can see a list of all the credentials saved
         '''
 
-        # Saving new credential
+        # Save new credential
         self.new_credential.save_credential()
 
         test_credential = Credentials("RK","Twitter","@myTwitter055")
@@ -174,13 +174,13 @@ class TestCredentials(unittest.TestCase):
         Test to check if we can return a boolean if we can't find the credential
         '''
 
-        # Save the new credential
+        # Save new credential
         self.new_credential.save_credential()
 
         test_credential = Credentials("RK","Slack","098765")
         test_credential.save_credential()
         
-        # use contact exist method
+        # check if the user exists 
         found_credential = Credentials.credential_exist("Slack")
         self.assertTrue(found_credential, True) 
 
