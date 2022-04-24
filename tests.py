@@ -17,7 +17,11 @@ class TestUser(unittest.TestCase):
 
         # new user object
         self.new_user = User("Robert Kirui","Rob@012345!")
-
+    
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run. 
+        '''
         User.users = []
 
 
@@ -97,11 +101,6 @@ class TestUser(unittest.TestCase):
         user_exists = User.check_user_exist("Robert Kirui")
         
         self.assertTrue(user_exists)
-
-
-
-
-
 
 
 
