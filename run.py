@@ -1,4 +1,4 @@
-from user import User, Credentials
+from user_credentials import User, Credentials
 
 # Creating a new user
 def create_new_user(full_name, password):
@@ -291,7 +291,7 @@ def main():
             '''
             Option to exit the application 
             '''
-            
+
             print("Goodbye")
             break
         
